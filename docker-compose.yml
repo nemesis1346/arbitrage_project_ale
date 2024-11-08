@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  hardhat-node:
+    image: ethereum/client-go:v1.10.8
+    container_name: hardhat-node
+    command: ["--dev", "--http", "--http.addr", "0.0.0.0", "--http.port", "8545", "--http.api", "eth,net,web3"]
+    ports:
+      - "8545:8545"
+
+  arbitrage-app:
+    build: .
+    container_name: arbitrage-app
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - INFURA_API_KEY=your_infura_project_id
+      - PRIVATE_KEY=your_private_key
+    depends_on:
+      - hardhat-node
+    command: ["yarn", "test"]  # You can set this to any command you need
