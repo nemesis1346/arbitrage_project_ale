@@ -6,15 +6,12 @@ WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json for dependencies installation
 COPY package*.json ./
+RUN npm install
 
-# Install Node.js dependencies
-# RUN npm install -g yarn
-RUN yarn install
+# Install Hardhat globally and any other necessary dependencies
+RUN npm install -g hardhat
 
-# Install Hardhat
-RUN yarn add hardhat
-
-# Copy the rest of the project files
+# Copy the rest of your app
 COPY . .
 
 # Expose ports as needed, e.g., port 8545 for local blockchain
