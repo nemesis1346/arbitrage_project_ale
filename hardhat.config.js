@@ -3,7 +3,7 @@ require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
 
 module.exports = {
-  solidity: "0.8.0",
+  solidity: "0.8.20",
   paths: {
     sources: "./smart_contracts", // Point to your smart contracts directory
     tests: "./", // Point to the directory where your tests are
