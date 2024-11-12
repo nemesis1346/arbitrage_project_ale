@@ -1,3 +1,4 @@
+si this was the previous test:
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
@@ -23,13 +24,16 @@ describe("Arbitrage Contract", function () {
     // Deploying the Mock Uniswap V3 and SushiSwap routers
     const MockUniswapV3Router = await ethers.getContractFactory("MockUniswapV3Router");
     mockUniswapRouter = await MockUniswapV3Router.deploy();
+    console.log('Mock Uniswap deployed address: ', mockUniswapRouter.address)
 
     const MockSushiSwapRouter = await ethers.getContractFactory("MockSushiSwapRouter");
     mockSushiSwapRouter = await MockSushiSwapRouter.deploy();
+    console.log('Mock SushiRouter deployed address: ', mockSushiSwapRouter.address)
 
     // Deploying the Mock Aave Pool
     const MockAavePool = await ethers.getContractFactory("MockAavePool");
     mockAavePool = await MockAavePool.deploy();
+    console.log('Mock Aave deployed address: ', mockAavePool.address)
 
     // Deploying the Arbitrage Contract
     Arbitrage = await ethers.getContractFactory("Arbitrage");

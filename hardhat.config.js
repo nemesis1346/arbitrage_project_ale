@@ -5,8 +5,8 @@ require("@nomiclabs/hardhat-ethers");
 module.exports = {
   solidity: "0.8.20",
   paths: {
-    sources: "./smart_contracts", // Point to your smart contracts directory
-    tests: "./", // Point to the directory where your tests are
+    sources: "./contracts_hardhat", // Point to your smart contracts directory
+    tests: "./tests_hardhat", // Point to the directory where your tests are
     cache: "./cache",
     artifacts: "./artifacts",
   },
